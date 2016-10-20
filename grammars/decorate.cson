@@ -1,0 +1,140 @@
+'scopeName': 'zdoom-decorator.decorate'
+'name': 'ZDoom DECORATE'
+'fileTypes': [
+  'dec',
+  'decorate'
+]
+
+'patterns': [
+  # Actor definition
+  {
+    'match': '(\\b)?(ACTOR|actor) ([a-zA-Z1-9\\-]+)( : ([a-zA-Z1-9\\-]+))?( (replaces|REPLACES) [a-zA-Z1-9\\-_]+)?(\\d*)'
+    'captures':
+      '1':
+        'name': 'keyword.control.decorate'
+
+      '2':
+        'name': 'entity.name.function.decorate'
+
+      '3':
+        'name': 'entity.name.function.decorate'
+
+      '4':
+        'name': 'meta.function.decorate'
+
+      '5':
+        'name': 'keyword.control.decorate'
+
+      '6':
+        'name': 'entity.name.function.decorate'
+
+      '7':
+        'name': 'keyword.other.decorate'
+
+    'name': 'meta.function.decorate'
+  },
+
+  #======= String Constants ==========
+  {
+    'begin': '\''
+    'end': '\''
+
+    'beginCaptures':
+        '0':
+            'name': 'punctuation.definition.string.begin.decorate'
+    'endCaptures':
+        '0':
+            'name': 'punctuation.definition.string.end.decorate'
+
+    'name': 'string.quoted.single.decorate'
+  },
+
+  {
+    'begin': '\"'
+    'end': '\"'
+
+    'beginCaptures':
+        '0':
+            'name': 'punctuation.definition.string.begin.decorate'
+    'endCaptures':
+        '0':
+            'name': 'punctuation.definition.string.end.decorate'
+
+    'name': 'string.quoted.double.decorate'
+  },
+
+  {
+    'match': '[\\b\\t\\n ]+(([0-9]+\\.?[0-9]*)|(\\.[0-9]+))\\b'
+    'name': 'constant.numeric.decorate'
+  }
+  #===================================
+
+  # Actor flag
+  {
+    'match': '[\\b\\t\\n ]\\+[a-zA-Z1-9\\-_]+\\b'
+    'name': 'keyword.operator.decorate'
+  }
+
+  # DECORATE variables
+  {
+    'match': '[\\b\\t\\n ]+([a-zA-Z1-9\\-_]+) \\d+\\b'
+    'captures':
+      '1':
+        'name': 'variable.parameter.decorate'
+
+    'name': 'meta.variable.parameter.decorate'
+  }
+
+  # "States" definition
+  {
+    'match': '[\\b\\t\\n ]+States\\b'
+    'name': 'meta.entity.section.decorate'
+  }
+
+  # State label
+  {
+    'match': '[\\b\\t\\n ]+([a-zA-Z1-9\\-_]+):\\b'
+    'captures':
+      '1':
+        'name': 'entity.name.section.decorate'
+
+    'name': 'meta.entity.name.section.decorate'
+  }
+
+  # State flow control
+  {
+    'match': '[\\b\\t\\n ]+(Stop|Loop|Fail|GoTo ([a-zA-Z1-9\\+]+))\\b'
+
+    'captures':
+      '1':
+        'name': 'keyword.other.decorate'
+
+      '2':
+        'name': 'constant.language.decorate'
+  }
+
+  # State
+  {
+    'match': '[\\b\\t\\n ]+([A-Za-z1-9]{4}) ([A-Za-z]) (\\d+) ([a-zA-Z]+(\\([a-zA-Z1-9,]+\\))?)? (A_[a-zA-Z1-9]+)?'
+    'captures':
+      '1':
+        'name': 'entity.name.tag.decorate'
+
+      '2':
+        'name': 'constant.character.decorate'
+
+      '3':
+        'name': 'constant.numeric.decorate'
+
+      '4':
+        'name': 'keyword.control.decorate'
+
+      '5':
+        'name': 'keyword.control.decorate'
+
+      '6':
+        'name': 'entity.name.function.decorate'
+
+    'name': 'keyword.control.decorate'
+  }
+]

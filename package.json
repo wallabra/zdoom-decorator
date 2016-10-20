@@ -1,0 +1,21 @@
+{
+  "name": "zdoom-decorate-syntax",
+  "version": "0.1.0",
+  "description": "Syntax highlighting for DECORATE (a state-scripting language used by ZDoom on actors)",
+  "keywords": [
+    "syntax-highlighting",
+    "grammar",
+    "decorate",
+    "zdoom"
+  ],
+  "activationCommands": {
+    "atom-workspace": "zdoom-decorator:toggle"
+  },
+  "repository": "https://github.com/atom/zdoom-decorator",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  },
+  "dependencies": {
+  }
+}
